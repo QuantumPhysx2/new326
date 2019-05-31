@@ -1,0 +1,32 @@
+# --- Section done by Gia
+# !!! WARNING: This file handles the internal server processes and configurations of Apache. Be sure to check that everything is written correctly, or else the web page will not work !!!
+
+# [Error Handling]
+# Reference: https://httpd.apache.org/docs/2.4/mod/core.html#errordocument
+# Set the 404 error handler callback to the page '404.php'
+ErrorDocument 404 /404.php
+
+# [Hiding .php extension from URL]
+# Reference: https://httpd.apache.org/docs/2.4/rewrite/flags.html#flag_g
+# Reference: https://tecadmin.net/remove-file-extension-from-url-using-htaccess/
+# Reference: https://stackoverflow.com/questions/6654834/difference-between-1-vs-1-in-htaccess
+
+# !!! Flags !!!
+# NC = NoCase = flag to set as not case-sensitive
+# L = Last = if a rule set matches, don't process anything else afterwards
+# R = Redirect = issues a redirect to the browser to the current location requested (i.e. User -> index.php = R = returns only 'index')
+
+# !!! Parameters !!!
+# -f = file
+# -d = directory
+
+# Rewrite internal server to allow writing changes to be 'ON'
+RewriteEngine on
+# Setup a rewrite condition to the 'REQUEST' and use Regex to filter out .php from the URI using the flag [NoCase] to tell the Internal Server that it is not case-sensitive
+RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+# Setup a rule to detect a matched pattern in RewriteCond with flags: [NoCase, Last, Redirect]
+RewriteRule ^ /%1 [NC,L,R]
+
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^ %{REQUEST_URI}.php [NC,L]
+# --- End Gia section ---

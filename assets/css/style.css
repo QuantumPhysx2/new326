@@ -1,0 +1,236 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+p {
+  text-align: center;
+}
+
+.navigation {
+  display: grid;
+  grid-template-columns: 20% 21% 1fr;
+  background: #222;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.home {
+  margin: 0px 15px;
+}
+
+.jumbo-1 {
+  margin: auto;
+}
+
+.jumbo-1 img {
+  max-width: 90%;
+}
+
+.jumbo-2 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 100%;
+}
+
+.jumbo-2 a {
+  color: #ececec;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.jumbo-2 a::after {
+  border: 1px solid #222;
+}
+
+.jumbo-2 a:hover {
+  background: #98ff73;
+  color: #222;
+}
+
+.jumbo-2 i {
+  padding: 1vw;
+}
+
+.jumbo-2 i p {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+#logout {
+  width: 4vw;
+  margin: 2vh 1vw;
+  background: #ececec;
+  border: 0px;
+  color: #222;
+  float: right;
+  text-align: center;
+  text-decoration: none;
+}
+
+#logout:hover {
+  background: #98ff73;
+}
+
+.result form {
+  width: 25%;
+  margin: auto;
+  display: grid;
+  grid-row-gap: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  font-size: 1.5vw;
+}
+
+.g-recaptcha {
+  margin: auto;
+}
+
+#active {
+  background: #98ff73;
+  color: #222;
+}
+
+#register-button,
+#login-button {
+  margin: 5px auto;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.container {
+  margin: 25px 0px;
+}
+
+.products {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 200px;
+  grid-row-gap: 15px;
+}
+
+.products h1 {
+  padding: 10px 0px 0px 10px;
+  text-align: unset;
+}
+
+.products a {
+  margin: 0px 25px;
+  background: #efefef;
+  border: 1px solid #222;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.products .cpu,
+.products .gpu,
+.products .memory {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  transition: 0.35s ease;
+}
+
+.products .cpu:hover,
+.products .gpu:hover,
+.products .memory:hover {
+  border: 3px solid #222;
+  transform: scale(1.15);
+}
+
+.products .cpu {
+  background-image: url("https://files.pccasegear.com/images/categories/BX80662I76700K-tico1.jpg");
+}
+
+.products .gpu {
+ background-image: url("https://files.pccasegear.com/images/1541737583-ROG-STRIX-RTX2080-8G-GAMING-th.jpg");
+}
+
+.products .memory {
+  background-image: url("https://files.pccasegear.com/images/corsairthumbs22.jpg");
+}
+
+.errorMessage,
+.successMessage {
+  margin: 10px auto;
+  padding: 15px 0px;
+  border: 1px solid #222;
+  border-radius: 5px;
+  font-size: 18px;
+  text-align: center;
+  width: 50%;
+}
+
+.errorMessage {
+  background: #ffa494;
+}
+
+.successMessage {
+  background: #b8ffa6;
+}
+
+.contact-section {
+  margin: 0vh 15vw;
+  text-align: center;
+}
+
+.user-profile {
+  margin: 0vh 15vw;
+}
+
+.user-profile h1,
+.user-profile p {
+  text-align: unset;
+}
+
+.edit-picture {
+  position: relative;
+  left: 90px;
+  bottom: 40px;
+  opacity: 0.35;
+  width: 8.5%;
+}
+
+.edit-picture p {
+  background: gray;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #333;
+  color: #fff;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    grid-template-columns: unset;
+  }
+
+  .jumbo-1 img {
+    max-width: 35%;
+    padding: 7px;
+  }
+
+  .jumbo-3 {
+    display: none;
+  }
+
+  .result form {
+    width: 50%;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    font-size: 3.5vw;
+  }
+}
